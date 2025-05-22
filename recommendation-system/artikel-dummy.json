@@ -1,37 +1,42 @@
 [   {
         "id": 1,
-        "judul": "Strategi Nutrisi untuk Anak Stunting",
-        "isi": "Anak dengan kondisi stunting memerlukan makanan tinggi kalori dan protein seperti telur, ikan, dan susu. Pemantauan pertumbuhan juga penting.",
-        "kategori": "stunting",
-        "tag": ["gizi", "pencegahan", "tinggi protein"]
+        "judul": "10 Cara Membiasakan Pola Hidup Sehat pada Anak",
+        "isi": "Membiasakan pola hidup sehat pada anak sejak dini sangat penting untuk mencegah berbagai penyakit, karena sistem kekebalan tubuhnya masih belum sempurna",
+        "kategori": "normal",
+        "tag": ["normal", "tubuh normal", "sehat", "pola hidup sehat"],
+        "url": "https://www.alodokter.com/ini-7-cara-mengajari-anak-belajar-hidup-sehat"
     },
     {
         "id": 2,
-        "judul": "Menu Sehari untuk Balita Stunting",
-        "isi": "Contoh menu sehari: pagi telur rebus, siang nasi tim hati ayam, sore bubur kacang hijau. Pastikan anak makan 3 kali dan camilan 2 kali sehari.",
-        "kategori": "stunting",
-        "tag": ["menu sehat", "mpasi", "perbaikan gizi"]
+        "judul": "Menerapkan Perilaku Hidup Sehat Sejak Usia Dini",
+        "isi": "Anak dapat diajak untuk melakukan aktivitas fisik  seperti senam maupun kegiatan lainnya di luar ruangan pada pagi hari untuk mendapatkan sinar matahari yang cukup",
+        "kategori": "normal",
+        "tag": ["normal", "sehat"],
+        "url": "https://paudpedia.kemendikdasmen.go.id/galeri-ceria/ruang-artikel/menerapkan-perilaku-hidup-sehat-sejak-usia-dini?ref=MTg2Mi0yYjRiZmI5MQ&ix=NDctNGJkMWM0YjQ"
     },
     {
         "id": 3,
-        "judul": "Ciri Anak Sangat Stunting yang Harus Dikenali",
-        "isi": "Jika tinggi badan sangat di bawah rata-rata, disertai gangguan perkembangan, anak bisa masuk kategori sangat stunting. Segera konsultasi ke puskesmas.",
-        "kategori": "sangat stunting",
-        "tag": ["tanda stunting", "tumbuh kembang", "kesehatan"]
+        "judul": "Menu Makanan Bergizi untuk Mencegah Stunting pada Anak",
+        "isi": "Dalam mencegah stunting, penting untuk memilih makanan yang mengandung nutrisi penting bagi pertumbuhan dan perkembangan anak. ",
+        "kategori": "normal",
+        "tag": ["cegah stunting", "tumbuh normal", "sehat", "menu makanan"],
+        "url":"https://hellosehat.com/parenting/anak-1-sampai-5-tahun/gizi-balita/"
     },
     {
         "id": 4,
-        "judul": "Langkah Darurat untuk Anak Sangat Stunting",
-        "isi": "Selain asupan gizi, anak sangat stunting sering butuh intervensi medis. Pemberian makanan tambahan dari pemerintah juga tersedia.",
-        "kategori": "sangat stunting",
-        "tag": ["intervensi", "medis", "bantuan pemerintah"]
+        "judul": "Agar Anak Sehat Dan Cerdas, Mari Cegah Stunting Sejak Dini",
+        "isi": "Penuhi pula kebutuhan gizi anak Anda sejak ia lahir hingga remaja untuk menghindari stunting pada bayi. Saat masih bayi, berikan anak Anda air susu ibu (IBU) atau susu formula selama enam bulan. Selanjutnya, berikan asupan gizi anak melalui makanan pendamping ASI (MPASI). Anda bisa mengikuti panduan MPASI yang dianjurkan WHO untuk anak-anak yang sudah mulai makan.",
+        "kategori": "normal",
+        "tag": ["normal", "cegah stunting"],
+        "url":"https://www.chubb.com/id-id/articles/personal/cegah-stunting-sejak-dini.html"
     },
     {
         "id": 5,
-        "judul": "Anak dengan Tinggi di Atas Rata-rata: Apa Artinya?",
-        "isi": "Balita dengan tinggi di atas rata-rata umumnya sehat. Namun, perlu dipantau agar tidak kelebihan berat badan seiring waktu.",
-        "kategori": "tinggi",
-        "tag": ["pertumbuhan cepat", "pantauan", "tinggi badan"]
+        "judul": "Mengenal 3 Tips Pencegahan Stunting",
+        "isi": "Kurangnya akses sanitasi dan air bersih merupakan pemicu dari terpaparnya seorang anak dari penyakit infeksi. Untuk itu, biasakan anak untuk cuci tangan pakai sabun dan air mengalir, serta tidak buang air besar sembarangan sejak dini.",
+        "kategori": "normal",
+        "tag": ["pertumbuhan cepat", "pantauan", "tinggi badan"],
+        "url":"https://ayosehat.kemkes.go.id/mengenal-3-tips-pencegahan-stunting"
     },
     {
         "id": 6,
