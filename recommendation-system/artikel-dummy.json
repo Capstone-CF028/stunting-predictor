@@ -40,23 +40,50 @@
     },
     {
         "id": 6,
-        "judul": "Nutrisi Seimbang untuk Anak yang Tingginya Cepat",
-        "isi": "Tinggi badan cepat bukan alasan memberi makan seenaknya. Pastikan anak tetap mendapat makanan seimbang dan aktif secara fisik.",
-        "kategori": "tinggi",
-        "tag": ["gizi seimbang", "tinggi cepat", "aktivitas anak"]
+        "judul": "4 Cara Mengatasi Masalah Stunting pada Balita",
+        "isi" : "Stunting pada balita bisa berlanjut hingga usia dewasa. Jadi, sebelum berdampak pada pertumbuhan dan perkembangan anak secara menyeluruh, kondisi stunting harus dicegah."
+        "kategori": "stunting",
+        "tag": ["cegah stunting", "MPASI", "pola asuh"],
+        "url": "https://www.halodoc.com/artikel/4-cara-mengatasi-masalah-stunting-pada-balita"
     },
     {
         "id": 7,
-        "judul": "Panduan Gizi Seimbang untuk Balita Normal",
-        "isi": "Anak dengan pertumbuhan normal tetap harus dijaga gizinya agar tidak berisiko stunting atau obesitas. Terapkan pola makan bergizi seimbang.",
-        "kategori": "normal",
-        "tag": ["gizi seimbang", "pencegahan", "tumbuh normal"]
+        "judul": "12 Resep Menu Masakan Pencegah Stunting yang Bernutrisi dan Mudah Dibuat",
+        "isi" : "Beberapa resep menu masakan bernutrisi yang mudah dibuat untuk cegah stunting",
+        "kategori": "stunting",
+        "tag": ["resep makanan", "MPASI", "makanan bergizi"],
+        "url": "https://www.haibunda.com/parenting/20231228170303-59-324879/12-resep-menu-masakan-pencegah-stunting-yang-bernutrisi-dan-mudah-dibuat"
     },
     {
         "id": 8,
-        "judul": "Aktivitas Stimulasi untuk Anak Tumbuh Normal",
-        "isi": "Berikan aktivitas bermain yang merangsang motorik dan sensorik, seperti bermain pasir, menyusun balok, dan membaca bersama.",
-        "kategori": "normal",
-        "tag": ["stimulasi anak", "perkembangan", "bermain"]
+        "judul": "Stunting pada Anak: Penyebab, Bahaya, dan Pencegahan",
+        "isi": "Stunting adalah gangguan pada anak yang dapat dicegah jika orang tua mengambil langkah-langkah penting dalam dua tahun pertama kehidupan seorang anak.",
+        "kategori": "stunting",
+        "tag": ["Penyebab", "Bahaya", "Pencegahan"],
+        "url": "https://doktersehat.com/penyakit-a-z/stunting-pada-anak/"
+    },
+    {
+        "id": 9,
+        "judul": "Gangguan Perkembangan Otak pada Anak Stunting",
+        "isi": "Malnutrisi pada anak dengan stunting dapat berdampak negatif pada perkembangan otak anak. Pada akhirnya, kondisi ini akan berpengaruh pada proses belajar dan perkembangan kognitif mereka.",
+        "kategori": "stunting",
+        "tag": ["Perkembangan otak", "Dampak Stunting", "perkembangan kognitif"],
+        "url": "https://www.klikdokter.com/ibu-anak/kesehatan-anak/gangguan-perkembangan-otak-pada-anak-stunting"
+    },
+    {
+        "id": 10,
+        "judul": "Mengenal Stunting: Deteksi Dini, Dampak, dan Pencegahannya",
+        "isi": "Kondisi stunting umumnya disebabkan oleh rendahnya asupan gizi dan status kesehatan dalam waktu yang cukup lama. Deteksi dini stunting dapat dilakukan dengan memantau kurva pertumbuhan anak secara rutin.",
+        "kategori": "stunting",
+        "tag": ["Deteksi dini stunting", "Dampak", "Pencegahan"],
+        "url": "https://pkgm.fk.ugm.ac.id/2022/04/05/mengenal-stunting-deteksi-dini-dampak-dan-pencegahannya/"
+    },
+    {
+        "id": 11,
+        "judul": "Stunting pada Anak: Penyebab, Bahaya, dan Pencegahan",
+        "isi": "Stunting adalah gangguan pada anak yang dapat dicegah jika orang tua mengambil langkah-langkah penting dalam dua tahun pertama kehidupan seorang anak.",
+        "kategori": "stunting",
+        "tag": ["Penyebab", "Bahaya", "Pencegahan"],
+        "url": "https://doktersehat.com/penyakit-a-z/stunting-pada-anak/"
     }
 ]
