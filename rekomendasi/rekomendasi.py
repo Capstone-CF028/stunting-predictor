@@ -1,12 +1,12 @@
 import requests
 
 def call_google_search_api(api_key, search_engine_id, query):
-    url = f"https://www.googleapis.com/customsearch/v1"
+    url = "https://www.googleapis.com/customsearch/v1"
     params = {
         "key": api_key,
         "cx": search_engine_id,
         "q": query,
-        "num": 5  # jumlah hasil artikel yang diambil, maksimal 10
+        "num": 10
     }
     response = requests.get(url, params=params)
     if response.status_code == 200:
@@ -16,14 +16,28 @@ def call_google_search_api(api_key, search_engine_id, query):
         return None
 
 def get_articles_by_prediction(api_key, search_engine_id, prediction_category):
-    if prediction_category == "stunting_berat":
-        query = "stunting berat gejala pencegahan"
-    elif prediction_category == "stunting_ringan":
-        query = "stunting ringan nutrisi pencegahan"
-    elif prediction_category == "normal":
-        query = "tumbuh kembang sehat nutrisi anak"
+    allowed_sites = (
+        "site:detik.com OR site:kompas.com OR site:halodoc.com OR site:alodokter.com OR "
+        "site:unicef OR site:kemkes.go.id OR site:who.int OR site:hellosehat.com OR "
+        "site:siloamhospitals.com. "
+    )
+
+    if prediction_category == "Stunting_Sangat Stunting":
+        query = "stunting berat gejala pencegahan " + allowed_sites
+    elif prediction_category == "Stunting_Stunting":
+        query = "stunting ringan nutrisi pencegahan " + allowed_sites
+    elif prediction_category == "Stunting_Normal":
+        query = "tumbuh kembang sehat nutrisi anak " + allowed_sites
+    elif prediction_category == "Wasting_Normal":
+        query = "status gizi anak normal tips kesehatan " + allowed_sites
+    elif prediction_category == "Wasting_Risiko Kegemukan":
+        query = "anak risiko kegemukan pola makan sehat " + allowed_sites
+    elif prediction_category == "Wasting_Sangat Kurus":
+        query = "wasting sangat kurus balita penyebab dan pencegahan " + allowed_sites
+    elif prediction_category == "Wasting_Kurus":
+        query = "wasting kurus pada anak penyebab solusi " + allowed_sites
     else:
-        query = "stunting pencegahan"
+        query = "masalah gizi pada anak dan pencegahannya " + allowed_sites
 
     data = call_google_search_api(api_key, search_engine_id, query)
     if data and "items" in data:
@@ -36,14 +50,11 @@ def get_articles_by_prediction(api_key, search_engine_id, prediction_category):
     else:
         return []
 
-# contoh pemakaian:
 if __name__ == "__main__":
-    # kode utama kamu di sini
-
-    API_KEY = "AIzaSyDGOfOgg16rrPdvkaE5Z_L6edLafeEXcIQ"
+    API_KEY = "AIzaSyDGOfOgg16rrPdvkaE5Z_L6edLafeEXcIQ"  # Ganti jika diperlukan
     SEARCH_ENGINE_ID = "b00ebfb1f84a94c1e"
 
-    kategori_prediksi = "stunting_berat"  # contoh input dari hasil prediksi model
+    kategori_prediksi = "Wasting_Sangat Kurus"
 
     hasil_artikel = get_articles_by_prediction(API_KEY, SEARCH_ENGINE_ID, kategori_prediksi)
 
