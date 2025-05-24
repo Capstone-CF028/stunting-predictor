@@ -1,0 +1,89 @@
+[   {
+        "id": 1,
+        "judul": "10 Cara Membiasakan Pola Hidup Sehat pada Anak",
+        "isi": "Membiasakan pola hidup sehat pada anak sejak dini sangat penting untuk mencegah berbagai penyakit, karena sistem kekebalan tubuhnya masih belum sempurna",
+        "kategori": "normal",
+        "tag": ["normal", "tubuh normal", "sehat", "pola hidup sehat"],
+        "url": "https://www.alodokter.com/ini-7-cara-mengajari-anak-belajar-hidup-sehat"
+    },
+    {
+        "id": 2,
+        "judul": "Menerapkan Perilaku Hidup Sehat Sejak Usia Dini",
+        "isi": "Anak dapat diajak untuk melakukan aktivitas fisik  seperti senam maupun kegiatan lainnya di luar ruangan pada pagi hari untuk mendapatkan sinar matahari yang cukup",
+        "kategori": "normal",
+        "tag": ["normal", "sehat"],
+        "url": "https://paudpedia.kemendikdasmen.go.id/galeri-ceria/ruang-artikel/menerapkan-perilaku-hidup-sehat-sejak-usia-dini?ref=MTg2Mi0yYjRiZmI5MQ&ix=NDctNGJkMWM0YjQ"
+    },
+    {
+        "id": 3,
+        "judul": "Menu Makanan Bergizi untuk Mencegah Stunting pada Anak",
+        "isi": "Dalam mencegah stunting, penting untuk memilih makanan yang mengandung nutrisi penting bagi pertumbuhan dan perkembangan anak. ",
+        "kategori": "normal",
+        "tag": ["cegah stunting", "tumbuh normal", "sehat", "menu makanan"],
+        "url":"https://hellosehat.com/parenting/anak-1-sampai-5-tahun/gizi-balita/"
+    },
+    {
+        "id": 4,
+        "judul": "Agar Anak Sehat Dan Cerdas, Mari Cegah Stunting Sejak Dini",
+        "isi": "Penuhi pula kebutuhan gizi anak Anda sejak ia lahir hingga remaja untuk menghindari stunting pada bayi. Saat masih bayi, berikan anak Anda air susu ibu (IBU) atau susu formula selama enam bulan. Selanjutnya, berikan asupan gizi anak melalui makanan pendamping ASI (MPASI). Anda bisa mengikuti panduan MPASI yang dianjurkan WHO untuk anak-anak yang sudah mulai makan.",
+        "kategori": "normal",
+        "tag": ["normal", "cegah stunting"],
+        "url":"https://www.chubb.com/id-id/articles/personal/cegah-stunting-sejak-dini.html"
+    },
+    {
+        "id": 5,
+        "judul": "Mengenal 3 Tips Pencegahan Stunting",
+        "isi": "Kurangnya akses sanitasi dan air bersih merupakan pemicu dari terpaparnya seorang anak dari penyakit infeksi. Untuk itu, biasakan anak untuk cuci tangan pakai sabun dan air mengalir, serta tidak buang air besar sembarangan sejak dini.",
+        "kategori": "normal",
+        "tag": ["pertumbuhan cepat", "pantauan", "tinggi badan"],
+        "url":"https://ayosehat.kemkes.go.id/mengenal-3-tips-pencegahan-stunting"
+    },
+    {
+        "id": 6,
+        "judul": "4 Cara Mengatasi Masalah Stunting pada Balita",
+        "isi" : "Stunting pada balita bisa berlanjut hingga usia dewasa. Jadi, sebelum berdampak pada pertumbuhan dan perkembangan anak secara menyeluruh, kondisi stunting harus dicegah."
+        "kategori": "stunting",
+        "tag": ["cegah stunting", "MPASI", "pola asuh"],
+        "url": "https://www.halodoc.com/artikel/4-cara-mengatasi-masalah-stunting-pada-balita"
+    },
+    {
+        "id": 7,
+        "judul": "12 Resep Menu Masakan Pencegah Stunting yang Bernutrisi dan Mudah Dibuat",
+        "isi" : "Beberapa resep menu masakan bernutrisi yang mudah dibuat untuk cegah stunting",
+        "kategori": "stunting",
+        "tag": ["resep makanan", "MPASI", "makanan bergizi"],
+        "url": "https://www.haibunda.com/parenting/20231228170303-59-324879/12-resep-menu-masakan-pencegah-stunting-yang-bernutrisi-dan-mudah-dibuat"
+    },
+    {
+        "id": 8,
+        "judul": "Stunting pada Anak: Penyebab, Bahaya, dan Pencegahan",
+        "isi": "Stunting adalah gangguan pada anak yang dapat dicegah jika orang tua mengambil langkah-langkah penting dalam dua tahun pertama kehidupan seorang anak.",
+        "kategori": "stunting",
+        "tag": ["Penyebab", "Bahaya", "Pencegahan"],
+        "url": "https://doktersehat.com/penyakit-a-z/stunting-pada-anak/"
+    },
+    {
+        "id": 9,
+        "judul": "Gangguan Perkembangan Otak pada Anak Stunting",
+        "isi": "Malnutrisi pada anak dengan stunting dapat berdampak negatif pada perkembangan otak anak. Pada akhirnya, kondisi ini akan berpengaruh pada proses belajar dan perkembangan kognitif mereka.",
+        "kategori": "stunting",
+        "tag": ["Perkembangan otak", "Dampak Stunting", "perkembangan kognitif"],
+        "url": "https://www.klikdokter.com/ibu-anak/kesehatan-anak/gangguan-perkembangan-otak-pada-anak-stunting"
+    },
+    {
+        "id": 10,
+        "judul": "Mengenal Stunting: Deteksi Dini, Dampak, dan Pencegahannya",
+        "isi": "Kondisi stunting umumnya disebabkan oleh rendahnya asupan gizi dan status kesehatan dalam waktu yang cukup lama. Deteksi dini stunting dapat dilakukan dengan memantau kurva pertumbuhan anak secara rutin.",
+        "kategori": "stunting",
+        "tag": ["Deteksi dini stunting", "Dampak", "Pencegahan"],
+        "url": "https://pkgm.fk.ugm.ac.id/2022/04/05/mengenal-stunting-deteksi-dini-dampak-dan-pencegahannya/"
+    },
+    {
+        "id": 11,
+        "judul": "Stunting pada Anak: Penyebab, Bahaya, dan Pencegahan",
+        "isi": "Stunting adalah gangguan pada anak yang dapat dicegah jika orang tua mengambil langkah-langkah penting dalam dua tahun pertama kehidupan seorang anak.",
+        "kategori": "stunting",
+        "tag": ["Penyebab", "Bahaya", "Pencegahan"],
+        "url": "https://doktersehat.com/penyakit-a-z/stunting-pada-anak/"
+    }
+]
