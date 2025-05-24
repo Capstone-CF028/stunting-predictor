@@ -4,6 +4,12 @@ from utils.predictor import predict_stunting, predict_wasting
 from utils.recommender import recommend_articles
 
 app = Flask(__name__)
+@app.route('/', methods=['GET'])
+def index():
+    return 'API Stunting Predictor is running.'
+@app.route('/')
+def home():
+    return "API is running!"
 
 @app.route('/predict_stunting', methods=['POST'])
 def stunting_route():
