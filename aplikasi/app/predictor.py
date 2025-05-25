@@ -6,7 +6,7 @@ class StuntingPredictor:
     def __init__(self, model_path, scaler_path):
         self.model = load_model(model_path)
         self.scaler = joblib.load(scaler_path)
-        self.labels = ['Normal', 'Stunting', 'Sangat Stunting']  # ganti sesuai label modelmu
+        self.labels = ['Normal', 'Sangat Stunting', 'Stunting']  # Sesuai inference.py
 
     def preprocess(self, input_data):
         arr = np.array(input_data, dtype=float).reshape(1, -1)
@@ -24,7 +24,7 @@ class WastingPredictor:
     def __init__(self, model_path, scaler_path):
         self.model = load_model(model_path)
         self.scaler = joblib.load(scaler_path)
-        self.labels = ['Normal', 'Resiko Kegemukan', 'Sangat Kurus', 'Kurus']  # ganti sesuai label modelmu
+        self.labels = ['Normal', 'Resiko Kegemukan', 'Sangat Kurus', 'Kurus']
 
     def preprocess(self, input_data):
         arr = np.array(input_data, dtype=float).reshape(1, -1)
