@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const app = document.getElementById('app');
+const API_BASE_URL = 'http://localhost:8000';
 
 function createHome() {
   const container = document.createElement('div');
@@ -16,16 +17,12 @@ function createHome() {
   const btnStunting = document.createElement('button');
   btnStunting.className = 'btn btn-primary';
   btnStunting.textContent = 'Prediksi Stunting';
-  btnStunting.onclick = () => {
-    createPredictionForm('stunting');
-  };
+  btnStunting.onclick = () => createPredictionForm('stunting');
 
   const btnWasting = document.createElement('button');
   btnWasting.className = 'btn btn-secondary';
   btnWasting.textContent = 'Prediksi Wasting';
-  btnWasting.onclick = () => {
-    createPredictionForm('wasting');
-  };
+  btnWasting.onclick = () => createPredictionForm('wasting');
 
   btnGroup.appendChild(btnStunting);
   btnGroup.appendChild(btnWasting);
@@ -101,16 +98,47 @@ function createPredictionForm(type) {
 
   form.onsubmit = async (e) => {
     e.preventDefault();
+
     const formData = new FormData(form);
     const data = {};
     formData.forEach((value, key) => {
       data[key] = value;
     });
+
+
+    const inputData = [
+      data.gender === 'Laki-laki' ? 1 : 0,
+      Number(data.age),
+      Number(data.height),
+      Number(data.weight)
+    ];    
+
     try {
-      const response = await axios.post(`http://localhost:3002/predict/${type}`, data);
-      showResult(response.data, type);
+      const predictionResponse = await axios.post(`${API_BASE_URL}/predict/${type}`, {
+        data: [inputData]
+      });
+
+      if (predictionResponse.data.error) {
+        alert('Error saat memproses prediksi: ' + predictionResponse.data.error);
+        return;
+      }
+
+      const predictedCategory = predictionResponse.data.result;
+
+      const recommendationResponse = await axios.post(`${API_BASE_URL}/recommendation`, {
+        category: predictedCategory
+      });
+
+      if (recommendationResponse.data.error) {
+        alert('Error saat mengambil rekomendasi: ' + recommendationResponse.data.error);
+        return;
+      }
+
+      const articles = recommendationResponse.data.articles || [];
+
+      showResult({ category: predictedCategory, articles }, type);
     } catch (error) {
-      alert('Error saat memproses prediksi');
+      alert('Terjadi kesalahan saat memproses permintaan.');
       console.error(error);
     }
   };
@@ -120,6 +148,7 @@ function createPredictionForm(type) {
   app.appendChild(container);
 }
 
+// Display prediction result and recommended articles
 function showResult(result, type) {
   const container = document.createElement('div');
   container.className = 'container mt-5';
@@ -150,9 +179,7 @@ function showResult(result, type) {
     item.className = 'list-group-item list-group-item-action';
     item.textContent = article.title;
     item.style.cursor = 'pointer';
-    item.onclick = () => {
-      window.open(article.url, '_blank');
-    };
+    item.onclick = () => window.open(article.url, '_blank');
     articlesList.appendChild(item);
   });
 
@@ -162,4 +189,5 @@ function showResult(result, type) {
   app.appendChild(container);
 }
 
+// Initialize app
 createHome();

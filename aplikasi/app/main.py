@@ -1,15 +1,28 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from app.predictor import StuntingPredictor, WastingPredictor
 from app.rekomendasi import get_articles_by_prediction
+import logging
 
 app = FastAPI()
 
-@app.get("/")
-def root():
-    return {"message": "API Stunting Predictor dan Recommendation berjalan."}
+origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"
+]
 
-# Load model dan scaler
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 stunting_model = StuntingPredictor(
     model_path="models/model_stunting.h5",
     scaler_path="scaler/scaler.pkl"
@@ -26,23 +39,40 @@ class InputData(BaseModel):
 class CategoryInput(BaseModel):
     category: str
 
-API_KEY = "AIzaSyDGOfOgg16rrPdvkaE5Z_L6edLafeEXcIQ"  # Ganti jika diperlukan
+API_KEY = "AIzaSyDGOfOgg16rrPdvkaE5Z_L6edLafeEXcIQ"
 SEARCH_ENGINE_ID = "b00ebfb1f84a94c1e"
+
+@app.get("/")
+def root():
+    return {"message": "API Stunting Predictor dan Recommendation berjalan."}
 
 @app.post("/predict/stunting")
 def predict_stunting(input_data: InputData):
-    prediction = stunting_model.predict(input_data.data)
-    return {"result": prediction}
+    try:
+        logger.info(f"Received stunting prediction request with data: {input_data.data}")
+        prediction = stunting_model.predict(input_data.data)
+        logger.info(f"Stunting prediction result: {prediction}")
+        return {"result": prediction}
+    except Exception as e:
+        logger.error(f"Error during stunting prediction: {e}")
+        raise HTTPException(status_code=500, detail=f"Prediction error: {str(e)}")
 
 @app.post("/predict/wasting")
 def predict_wasting(input_data: InputData):
-    prediction = wasting_model.predict(input_data.data)
-    return {"result": prediction}
+    try:
+        logger.info(f"Received wasting prediction request with data: {input_data.data}")
+        prediction = wasting_model.predict(input_data.data)
+        logger.info(f"Wasting prediction result: {prediction}")
+        return {"result": prediction}
+    except Exception as e:
+        logger.error(f"Error during wasting prediction: {e}")
+        raise HTTPException(status_code=500, detail=f"Prediction error: {str(e)}")
 
 @app.post("/recommendation")
 def recommendation(input_data: CategoryInput):
     try:
         articles = get_articles_by_prediction(API_KEY, SEARCH_ENGINE_ID, input_data.category)
-        return {"articles":articles}
+        return {"articles": articles}
     except Exception as e:
-        return{"error":str(e)}
+        logger.error(f"Error during recommendation retrieval: {e}")
+        raise HTTPException(status_code=500, detail=f"Recommendation error: {str(e)}")
