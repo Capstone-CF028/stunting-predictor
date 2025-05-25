@@ -5,6 +5,10 @@ from app.rekomendasi import get_articles_by_prediction
 
 app = FastAPI()
 
+@app.get("/")
+def root():
+    return {"message": "API Stunting Predictor dan Recommendation berjalan."}
+
 # Load model dan scaler
 stunting_model = StuntingPredictor(
     model_path="models/model_stunting.h5",
