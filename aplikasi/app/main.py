@@ -76,3 +76,28 @@ def recommendation(input_data: CategoryInput):
     except Exception as e:
         logger.error(f"Error during recommendation retrieval: {e}")
         raise HTTPException(status_code=500, detail=f"Recommendation error: {str(e)}")
+
+@app.post("/predict-and-recommend")
+def predict_and_recommend(input_data: InputData):
+    try:
+        # Prediksi dari input
+        stunting_label = stunting_model.predict(input_data.data)
+        wasting_label = wasting_model.predict(input_data.data)
+
+        # Tentukan label kategori
+        if "Stunting" in stunting_label:
+            category = f"Stunting_{stunting_label}"
+        else:
+            category = f"Wasting_{wasting_label}"
+
+        # Ambil artikel dari kategori gabungan
+        articles = get_articles_by_prediction(API_KEY, SEARCH_ENGINE_ID, category)
+
+        return {
+            "stunting": stunting_label,
+            "wasting": wasting_label,
+            "category_used": category,
+            "articles": articles
+        }
+    except Exception as e:
+        return {"error": str(e)}
