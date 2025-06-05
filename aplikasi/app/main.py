@@ -7,6 +7,7 @@ import logging
 
 app = FastAPI()
 
+# Setup CORS untuk frontend lokal
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000"
@@ -20,9 +21,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Load model dan scaler
 stunting_model = StuntingPredictor(
     model_path="models/model_stunting.h5",
     scaler_path="scaler/scaler.pkl"
@@ -33,18 +36,20 @@ wasting_model = WastingPredictor(
     scaler_path="scaler/scaler_wt.pkl"
 )
 
+# Schema untuk input data
 class InputData(BaseModel):
     data: list
 
 class CategoryInput(BaseModel):
     category: str
 
+# API Key dan Search Engine ID untuk Google Search
 API_KEY = "AIzaSyDGOfOgg16rrPdvkaE5Z_L6edLafeEXcIQ"
 SEARCH_ENGINE_ID = "b00ebfb1f84a94c1e"
 
 @app.get("/")
 def root():
-    return {"message": "API Stunting Predictor dan Recommendation berjalan."}
+    return {"message": "API Stunting-Wasting Predictor dan Rekomendasi berjalan."}
 
 @app.post("/predict/stunting")
 def predict_stunting(input_data: InputData):
@@ -80,24 +85,28 @@ def recommendation(input_data: CategoryInput):
 @app.post("/predict-and-recommend")
 def predict_and_recommend(input_data: InputData):
     try:
-        # Prediksi dari input
         stunting_label = stunting_model.predict(input_data.data)
         wasting_label = wasting_model.predict(input_data.data)
 
-        # Tentukan label kategori
-        if "Stunting" in stunting_label:
-            category = f"Stunting_{stunting_label}"
-        else:
-            category = f"Wasting_{wasting_label}"
+        combined_category = f"Stunting_{stunting_label} + Wasting_{wasting_label}"
 
-        # Ambil artikel dari kategori gabungan
+        # Tentukan kategori dominan untuk query artikel
+        if stunting_label != "Normal":
+            category = f"Stunting_{stunting_label}"
+        elif wasting_label != "Normal":
+            category = f"Wasting_{wasting_label}"
+        else:
+            category = "Wasting_Normal"
+
         articles = get_articles_by_prediction(API_KEY, SEARCH_ENGINE_ID, category)
 
         return {
             "stunting": stunting_label,
             "wasting": wasting_label,
-            "category_used": category,
+            "combined_category": combined_category,
+            "used_for_query": category,
             "articles": articles
         }
     except Exception as e:
-        return {"error": str(e)}
+        logger.error(f"Error during combined prediction and recommendation: {e}")
+        raise HTTPException(status_code=500, detail=f"Prediction error: {str(e)}")
