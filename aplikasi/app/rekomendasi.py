@@ -6,7 +6,7 @@ def call_google_search_api(api_key, search_engine_id, query):
         "key": api_key,
         "cx": search_engine_id,
         "q": query,
-        "num": 10
+        "num": 5
     }
     response = requests.get(url, params=params)
     if response.status_code == 200:

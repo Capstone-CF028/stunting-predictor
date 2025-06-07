@@ -2,32 +2,39 @@ import requests
 
 base_url = "http://127.0.0.1:8000"
 
-input_data = [1, 24, 9.5, 80]
+print("Masukkan data anak untuk prediksi stunting & wasting serta rekomendasi artikel:\n")
 
-# Prediksi Stunting
-response_stunting = requests.post(
-    f"{base_url}/predict",
-    json={"type": "stunting", "data": input_data}
+# Input data dari pengguna
+gender = int(input("1. Jenis Kelamin (0 = Perempuan, 1 = Laki-laki): "))
+age_months = int(input("2. Usia Anak (dalam bulan): "))
+height_cm = float(input("3. Tinggi Badan (cm): "))
+weight_kg = float(input("4. Berat Badan (kg): "))
+
+input_data = [gender, age_months, height_cm, weight_kg]
+
+# Validasi jumlah fitur
+expected_length = 4
+if len(input_data) != expected_length:
+    print(f"❌ Jumlah fitur input salah! Diperlukan {expected_length} fitur.")
+    exit()
+
+# Kirim request ke endpoint gabungan
+print("\nMengirim data ke server...")
+response = requests.post(
+    f"{base_url}/predict-and-recommend",
+    json={"data": input_data}
 )
-print("Prediksi Stunting:", response_stunting.json())
 
-# Prediksi Wasting
-response_wasting = requests.post(
-    f"{base_url}/predict",
-    json={"type": "wasting", "data": input_data}
-)
-print("Prediksi Wasting:", response_wasting.json())
-
-# Rekomendasi artikel berdasarkan prediksi Stunting_Sangat Stunting
-category = "Stunting_Sangat Stunting"
-response_articles = requests.post(
-    f"{base_url}/recommendation",
-    json={"category": category}
-)
-print("Status code:", response_articles.status_code)
-print("Response text:", response_articles.text)
-
+# Tampilkan hasil
+print("\n[Hasil Prediksi & Rekomendasi]")
 try:
-    print("Artikel Rekomendasi:", response_articles.json())
+    result = response.json()
+    print(f"\nStunting: {result.get('stunting')}")
+    print(f"Wasting: {result.get('wasting')}")
+    print(f"Kategori Gabungan: {result.get('combined_category')}")
+    print("\nArtikel Rekomendasi:")
+    for i, article in enumerate(result.get('articles', []), 1):
+        print(f"{i}. {article['title']}\n   {article['link']}")
 except Exception as e:
-    print("Gagal parsing JSON:", e)
+    print("❌ Gagal parsing response JSON:", e)
+    print("Response mentah:", response.text)
