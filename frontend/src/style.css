@@ -1,0 +1,84 @@
+/* style.css */
+
+/* Umum */
+body {
+  padding: 20px;
+  border: 2px solid #ccc;
+  background: linear-gradient(to right, #fdfbfb, #ebedee);
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #333 !important;
+}
+
+/* Hero Section */
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero img {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.hero h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 60px;
+  color: #55A630;
+  margin-bottom: 20px;
+}
+
+.hero h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+/* Tombol Prediksi */
+.btn-prediksi {
+  background-color: #55A630;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-prediksi:hover {
+  background-color: #4a902a;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  color: white;
+}
+
+/* Footer */
+footer {
+  background-color: #fafafa;
+  color: #777;
+  font-size: 14px;
+  padding: 12px 0;
+}
