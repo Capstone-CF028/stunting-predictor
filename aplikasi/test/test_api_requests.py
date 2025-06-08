@@ -22,7 +22,7 @@ if len(input_data) != expected_length:
 print("\nMengirim data ke server...")
 response = requests.post(
     f"{base_url}/predict-and-recommend",
-    json={"data": input_data}
+    json={"data": [input_data]}  # List of list
 )
 
 # Tampilkan hasil
@@ -31,7 +31,6 @@ try:
     result = response.json()
     print(f"\nStunting: {result.get('stunting')}")
     print(f"Wasting: {result.get('wasting')}")
-    print(f"Kategori Gabungan: {result.get('combined_category')}")
     print("\nArtikel Rekomendasi:")
     for i, article in enumerate(result.get('articles', []), 1):
         print(f"{i}. {article['title']}\n   {article['link']}")

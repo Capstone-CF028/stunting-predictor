@@ -7,10 +7,12 @@ import logging
 
 app = FastAPI()
 
-# Setup CORS untuk frontend lokal
+
 origins = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000"
+    "http://localhost:5500",
+    "http://127.0.0.1:5500",
+    "http://localhost:5173",       
+    "http://127.0.0.1:5173"         
 ]
 
 app.add_middleware(
@@ -44,8 +46,13 @@ class CategoryInput(BaseModel):
     category: str
 
 # API Key dan Search Engine ID untuk Google Search
-API_KEY = "AIzaSyDGOfOgg16rrPdvkaE5Z_L6edLafeEXcIQ"
-SEARCH_ENGINE_ID = "b00ebfb1f84a94c1e"
+from dotenv import load_dotenv
+import os
+
+load_dotenv()  # untuk memuat file .env
+
+API_KEY = os.getenv("API_KEY")
+SEARCH_ENGINE_ID = os.getenv("SEARCH_ENGINE_ID")
 
 @app.get("/")
 def root():
@@ -72,15 +79,6 @@ def predict_wasting(input_data: InputData):
     except Exception as e:
         logger.error(f"Error during wasting prediction: {e}")
         raise HTTPException(status_code=500, detail=f"Prediction error: {str(e)}")
-
-@app.post("/recommendation")
-def recommendation(input_data: CategoryInput):
-    try:
-        articles = get_articles_by_prediction(API_KEY, SEARCH_ENGINE_ID, input_data.category)
-        return {"articles": articles}
-    except Exception as e:
-        logger.error(f"Error during recommendation retrieval: {e}")
-        raise HTTPException(status_code=500, detail=f"Recommendation error: {str(e)}")
 
 @app.post("/predict-and-recommend")
 def predict_and_recommend(input_data: InputData):
