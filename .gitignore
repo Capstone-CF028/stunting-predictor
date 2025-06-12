@@ -46,7 +46,6 @@ __pycache__/
 
 # Frontend specific (hanya ignore hasil build / dependency)
 frontend/node_modules/
-frontend/dist/
 frontend/build/
 
 # Optional: kalau kamu pakai coverage / test
