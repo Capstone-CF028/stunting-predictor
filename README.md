@@ -93,7 +93,7 @@ npm run dev          # atau yarn dev
 
 ---
 
-## ✅ Cara Berkontribusi
+## Cara Berkontribusi
 
 1. Fork repo ini  
 2. Buat branch: `git checkout -b feature/xyz`  
@@ -105,7 +105,7 @@ npm run dev          # atau yarn dev
 
 ---
 
-### Catatan untuk Pengembang 💡
+### Catatan untuk Pengembang
 
 - Tambahkan `.gitignore` untuk `venv/`, `node_modules/`, `.env`, dsb.
 - Pastikan environment `.env` lengkap agar rekomendasi artikel bekerja.
