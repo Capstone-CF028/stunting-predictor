@@ -13,8 +13,6 @@ venv/
 .venv/
 
 # Build outputs
-dist/
-dist-ssr/
 build/
 
 # Local env files (keep your keys safe)
