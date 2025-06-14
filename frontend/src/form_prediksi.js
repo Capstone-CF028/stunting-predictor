@@ -25,7 +25,7 @@ form.onsubmit = async function (e) {
   const inputData = [[gender, age, height, weight]];
 
   try {
-    const response = await axios.post("http://stuntcareapi.netlify.app/predict-and-recommend", {
+    const response = await axios.post("https://stuntcareapi.netlify.app/predict-and-recommend", {
       data: inputData
     });
 
