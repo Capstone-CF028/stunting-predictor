@@ -24,7 +24,7 @@ form.onsubmit = async function (e) {
   const inputData = [[gender, age, height, weight]];
 
   try {
-    const response = await axios.post("https://render-production-ce00.up.railway.app", {
+    const response = await axios.post("https://render-production-ce00.up.railway.app/predict-and-recommend", {
       data: inputData
     });
 
