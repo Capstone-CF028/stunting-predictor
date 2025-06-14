@@ -1,4 +1,3 @@
-// src/form_prediksi.js
 import axios from 'axios';
 
 console.log("Form Prediksi Page is running...");
@@ -25,7 +24,7 @@ form.onsubmit = async function (e) {
   const inputData = [[gender, age, height, weight]];
 
   try {
-    const response = await axios.post("https://stuntcareapi.netlify.app/predict-and-recommend", {
+    const response = await axios.post("http://render-production-ce00.up.railway.app", {
       data: inputData
     });
 
