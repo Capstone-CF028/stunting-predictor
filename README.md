@@ -57,14 +57,14 @@ pip install -r requirements.txt
 Tambahkan file `.env` di folder `backend` seperti berikut:
 
 ```
-GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
-GOOGLE_CX=YOUR_SEARCH_ENGINE_ID
+API_KEY=YOUR_GOOGLE_API_KEY
+SEARCH_ENGINE_ID=YOUR_SEARCH_ENGINE_ID
 ```
 
 ### 3. Jalankan Backend FastAPI
 
 ```bash
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
 - API akan berjalan pada `http://localhost:8000`
@@ -80,14 +80,14 @@ npm install          # atau yarn install
 npm run dev          # atau yarn dev
 ```
 
-- Frontend akan berjalan di `http://localhost:5173`
-- CORS di backend sudah mengizinkan origin `http://localhost:5173`
+- Frontend akan berjalan di `http://localhost:5175`
+- CORS di backend sudah mengizinkan origin `http://localhost:5175`
 
 ---
 
 ## Penggunaan
 
-- Buka: `http://localhost:5173` di browser
+- Buka: `http://localhost:5175` di browser
 - Isi form prediksi
 - Tekan tombol untuk melihat prediksi & rekomendasi nutrisi
 
